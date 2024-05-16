@@ -6,4 +6,5 @@ export interface Spare {
     price: number;
     img: string;
     stock: number;
+    quantity: number;
 }

@@ -8,6 +8,7 @@
       <th scope="col">Modelo</th>
       <th scope="col">Precio</th>
       <th scope="col">Stock</th>
+      <th scope="col">Compra</th>
     </tr>
   </thead>
   <tbody>
@@ -19,11 +20,19 @@
       <td>{{spare.brand}}</td>
       <td>{{spare.model}}</td>
       <td>{{spare.price}}</td>
+      <td>{{spare.stock}}</td>
       @if (spare.stock >0) {
         <td>{{ spare.stock }}</td>
       } @else {
         <td>SIN STOCK</td>
       }
+      <td>
+        <button class="btn btn-primary btn-sm" (click)="upQuantity(spare)">+</button>
+        <input 
+          type="text" 
+          [(ngModel)]="spare.quantity">
+        {{spare.quantity}}
+        <button class="btn btn-primary btn-sm" (click)="downQuantity(spare)">-</button></td>
     </tr>
     }
   </tbody>
