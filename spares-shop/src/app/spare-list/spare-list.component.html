@@ -1,8 +1,8 @@
+
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Ilustracion</th>
       <th scope="col">Pieza</th>
       <th scope="col">Marca</th>
       <th scope="col">Modelo</th>
@@ -15,24 +15,22 @@
     @for (spare of spares; track spare.id) {
     <tr>
       <th scope="row">1</th>
-      <td><img src="{{spare.img}}" [alt]="" class="src"></td>
       <td>{{spare.type}}</td>
       <td>{{spare.brand}}</td>
       <td>{{spare.model}}</td>
       <td>{{spare.price}}</td>
-      <td>{{spare.stock}}</td>
       @if (spare.stock >0) {
         <td>{{ spare.stock }}</td>
       } @else {
         <td>SIN STOCK</td>
       }
       <td>
-        <button class="btn btn-primary btn-sm" (click)="upQuantity(spare)">+</button>
+        <button class="btn btn-primary btn-sm" (click)="downQuantity(spare)">-</button>
         <input 
           type="text" 
           [(ngModel)]="spare.quantity">
         {{spare.quantity}}
-        <button class="btn btn-primary btn-sm" (click)="downQuantity(spare)">-</button></td>
+        <button class="btn btn-primary btn-sm" (click)="upQuantity(spare)">+</button></td>
     </tr>
     }
   </tbody>
