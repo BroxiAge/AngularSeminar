@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { SpareAboutComponent } from './spare-about/spare-about.component';
 import { SparesComponent } from './spares/spares.component';
 import { CartComponent } from './cart/cart.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CartComponent } from './cart/cart.component';
     SpareListComponent,
     SpareAboutComponent,
     SparesComponent,
-    CartComponent
+    CartComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,

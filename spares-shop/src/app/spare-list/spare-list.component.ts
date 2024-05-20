@@ -45,13 +45,5 @@ export class SpareListComponent implements OnInit{
 
   } 
 
-  upQuantity(spare: Spare) {
-    if(spare.quantity < spare.stock)
-    spare.quantity++
-  }
 
-  downQuantity(spare: Spare) {
-    if(spare.quantity > 0)
-      spare.quantity --;
-  }
 }

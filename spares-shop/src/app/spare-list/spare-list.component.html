@@ -25,12 +25,12 @@
         <td>SIN STOCK</td>
       }
       <td>
-        <button class="btn btn-primary btn-sm" (click)="downQuantity(spare)">-</button>
-        <input 
-          type="text" 
-          [(ngModel)]="spare.quantity">
-        {{spare.quantity}}
-        <button class="btn btn-primary btn-sm" (click)="upQuantity(spare)">+</button></td>
+        <app-input-integer 
+          *ngIf="spare.stock" 
+          [(quantity)]="spare.quantity"
+          [max]="spare.stock">
+        </app-input-integer>
+      </td>
     </tr>
     }
   </tbody>
