@@ -1,1 +1,7 @@
 <h1>carrito de compras</h1>
+
+<ul>
+    <li *ngFor="let spare of cartList">
+        {{spare.brand}} - {{spare.model}} : {{spare.quantity}}
+    </li>
+</ul>

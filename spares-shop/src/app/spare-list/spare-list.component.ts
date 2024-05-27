@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Spare } from './Spare';
+import { SpareCartService } from '../spare-cart.service';
 
 @Component({
   selector: 'app-spare-list',
@@ -7,6 +8,8 @@ import { Spare } from './Spare';
   styleUrl: './spare-list.component.scss'
 })
 export class SpareListComponent implements OnInit{
+
+  constructor(private cart: SpareCartService) {}
 
   spares: Spare[] = [
     {
@@ -44,6 +47,12 @@ export class SpareListComponent implements OnInit{
   ngOnInit(): void {
 
   } 
+
+  addToCart(spare:Spare) : void {
+    this.cart.addToCart(spare)
+    spare.stock -= spare.quantity;
+    spare.quantity = 0;
+  }
 
 
 }
